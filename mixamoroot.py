@@ -106,7 +106,7 @@ def copyHips(root_bone_name="Root", hip_bone_name="mixamorig:Hips", name_prefix=
         
     for i in myFcurves:
         hip_bone_fcvurve = 'pose.bones["'+hip_bone_name+'"].location'
-        if str(i.data_path)==hip_bone_fcvurve:
+        if i and str(i.data_path)==hip_bone_fcvurve:
             myFcurves.remove(i)
                 
     bpy.ops.pose.select_all(action='DESELECT')
